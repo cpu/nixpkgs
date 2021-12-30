@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
 
   configureFlags = [ "--enable-use-pcre=no" "--enable-use-gcrypt=no" ];
 
-  installTargets = "install-driver install-utils";
+  installTargets = "install-driver install-utils install-headers";
 
   meta = with lib; {
     description =

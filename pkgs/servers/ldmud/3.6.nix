@@ -15,14 +15,13 @@ stdenv.mkDerivation rec {
 
   sourceRoot = "source/src";
 
-  # Avoid using the LD autogen.sh wrapper - it just runs 'autoreconf' in the 'autoconf'
-  # subdir and moves the generated resources to src/ - we want to use the autoreconfHook
-  # that expects configure.ac to be in the $sourceRoot.
   postUnpack = ''
     cp $sourceRoot/autoconf/configure.ac $sourceRoot/
   '';
 
   configureFlags = [ "--enable-use-pcre=no" "--enable-use-gcrypt=no" ];
+
+  installTargets = "install-driver install-utils";
 
   meta = with lib; {
     description =

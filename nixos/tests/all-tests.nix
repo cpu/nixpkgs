@@ -1973,6 +1973,7 @@ in
   unpackerr = runTest ./unpackerr.nix;
   upnp.iptables = handleTest ./upnp.nix { useNftables = false; };
   upnp.nftables = handleTest ./upnp.nix { useNftables = true; };
+  upki-mirror = runTest ./upki-mirror.nix;
   uptermd = runTest ./uptermd.nix;
   uptime-kuma = runTest ./uptime-kuma.nix;
   urn-timer = runTest ./urn-timer.nix;

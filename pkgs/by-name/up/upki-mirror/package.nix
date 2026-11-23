@@ -3,6 +3,7 @@
   rustPlatform,
   pkg-config,
   aws-lc,
+  nixosTests,
   rustc,
   upki,
 }:
@@ -32,6 +33,8 @@ rustPlatform.buildRustPackage {
   postInstall = ''
     mv "$out/bin/mozilla-crlite" "$out/bin/upki-mirror-mozilla-crlite"
   '';
+
+  passthru.tests.nixos = nixosTests.upki-mirror;
 
   meta = {
     description = "Mirrors Mozilla CRLite revocation data for UPKI";

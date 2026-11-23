@@ -35,6 +35,7 @@ rustPlatform.buildRustPackage {
   '';
 
   passthru.tests.nixos = nixosTests.upki-mirror;
+  passthru.tests.integration = nixosTests.upki-mirror-integration;
 
   meta = {
     description = "Mirrors Mozilla CRLite revocation data for UPKI";

@@ -1974,6 +1974,7 @@ in
   upnp.iptables = handleTest ./upnp.nix { useNftables = false; };
   upnp.nftables = handleTest ./upnp.nix { useNftables = true; };
   upki-mirror = runTest ./upki-mirror.nix;
+  upki-mirror-integration = runTest ./upki-mirror-integration.nix;
   uptermd = runTest ./uptermd.nix;
   uptime-kuma = runTest ./uptime-kuma.nix;
   urn-timer = runTest ./urn-timer.nix;
